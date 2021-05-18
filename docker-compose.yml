@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+  api-gadogado:
+    build: .
+    ports:
+      - "80:80"
