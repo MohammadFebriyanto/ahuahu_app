@@ -4,10 +4,7 @@ from flask import request, jsonify
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
-hasil = [
-    {'message': 'API SUCCESS',
-     'disclaimer': 'Ini cuma coba-coba'}
-]
+hasil = {'rekomendasi': 'API SUCCESS'}
 
 
 @app.route('/', methods=['GET'])
@@ -19,10 +16,9 @@ def home():
 @app.route('/api/v1/resources/air', methods=['GET'])
 def api_id():
 
-    results = []
 
     if ('long' in request.args) & ('lat' in request.args):
-        results.append(hasil)
+        results = hasil
     else:
         return "Error: No location field provided. Please specify longitude and latitude."
     return jsonify(results)
