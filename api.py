@@ -1,5 +1,7 @@
 import flask
 from flask import request, jsonify
+from predict import predict
+from request import req
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
@@ -18,10 +20,23 @@ def api_id():
 
 
     if ('long' in request.args) & ('lat' in request.args):
-        results = hasil
+        long = float(request.args['long'])
+        lat = float(request.args['lat'])
+        pm10, so2, co, o3, no2 = req(long,lat)
+        results = int(predict(pm10, so2, co, o3, no2))
+        if results==0:
+            hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'BAIK', 'rekomendasi': 'Silahkan berolahraga'}
+        elif results==1:
+            hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'SEDANG', 'rekomendasi': 'Silahkan berolahraga'}
+        elif results==2:
+            hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'TIDAK SEHAT', 'rekomendasi': 'Jangan berolahraga'}
+        elif results==3:
+            hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'SANGAT TIDAK SEHAT', 'rekomendasi': 'Jangan berolahraga'}
+        else:
+            hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'BERBAHAYA', 'rekomendasi': 'Lebih baik di rumah'}
     else:
         return "Error: No location field provided. Please specify longitude and latitude."
-    return jsonify(results)
+    return jsonify(hasil)
 
 if __name__ == "__main__":
     app.run(debug = True, host='0.0.0.0', port='80')
