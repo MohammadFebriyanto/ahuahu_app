@@ -41,14 +41,16 @@ class HomeFragment : Fragment(), LocationListener {
         locationManager = activity?.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         if ((checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
             activity?.let { ActivityCompat.requestPermissions(it, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), locationPermissionCode) }
+        }else{
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5f, this)
         }
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5f, this)
     }
 
     override fun onLocationChanged(location: Location) {
         Log.d("LOCATION", location.toString())
         Log.d("LATITUDE", location.latitude.toString())
         Log.d("LONGITUDE", location.longitude.toString())
+        binding.
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
