@@ -2,7 +2,7 @@ package com.cap0097.ahuahuapp.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class RevGeocodeResponse(
+data class RevGeocodeResponse<T>(
 
 	@field:SerializedName("items")
 	val items: List<ItemsItem>
