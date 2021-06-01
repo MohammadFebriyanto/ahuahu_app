@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.result.ResultFragment">
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/pb_get_location"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="31388-map-marker-spins.json"
+        app:lottie_loop="true" />
+
+    <TextView
+        android:id="@+id/tv_label_pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/font_poppins_regular"
+        android:gravity="center"
+        android:text="@string/label_loading_main"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/pb_get_location"
+        app:layout_constraintStart_toStartOf="@+id/pb_get_location"
+        app:layout_constraintTop_toBottomOf="@+id/pb_get_location" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

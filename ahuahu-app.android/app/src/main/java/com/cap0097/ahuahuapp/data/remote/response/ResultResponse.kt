@@ -2,7 +2,7 @@ package com.cap0097.ahuahuapp.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class LatLongResponse(
+data class ResultResponse(
 
 	@field:SerializedName("no2")
 	val no2: Double,

@@ -15,7 +15,10 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import com.cap0097.ahuahuapp.R
 import com.cap0097.ahuahuapp.databinding.FragmentHomeBinding
+import com.cap0097.ahuahuapp.ui.result.ResultFragment
 
 class HomeFragment : Fragment(), LocationListener {
     private var _binding: FragmentHomeBinding? = null
@@ -50,7 +53,16 @@ class HomeFragment : Fragment(), LocationListener {
         Log.d("LOCATION", location.toString())
         Log.d("LATITUDE", location.latitude.toString())
         Log.d("LONGITUDE", location.longitude.toString())
-        binding.
+        val latLongString = "${location.latitude.toString()}, ${location.longitude.toString()}"
+        val mFragment = ResultFragment()
+        val mArgs = Bundle()
+        mArgs.putString("LAT_LONG", latLongString)
+        mFragment.setArguments(mArgs)
+        val transaction = activity?.supportFragmentManager?.beginTransaction()
+        if (transaction != null) {
+            transaction.replace(R.id.container, mFragment)
+            transaction.commit()
+        }
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
@@ -63,4 +75,6 @@ class HomeFragment : Fragment(), LocationListener {
             }
         }
     }
+
+
 }
