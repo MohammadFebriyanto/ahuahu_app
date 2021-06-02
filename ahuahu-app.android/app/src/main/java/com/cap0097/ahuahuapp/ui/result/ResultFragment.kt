@@ -29,14 +29,15 @@ class ResultFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setLoading(true)
         val argsLat = arguments?.getString("LAT")
         val argsLong = arguments?.getString("LONG")
         Log.d("TAG_LAT", argsLat!!)
         Log.d("TAG_LONG", argsLong!!)
         viewModel.setResult(argsLat!!, argsLong!!).observe(viewLifecycleOwner, {
             Log.d("TAG_VM", it.toString())
+            setLoading(false)
         })
-        setLoading(true);
     }
 
     private fun setLoading(state: Boolean){
@@ -44,11 +45,19 @@ class ResultFragment : Fragment() {
             binding.apply {
                 tvLabelPb.visibility = View.VISIBLE
                 pbGetLocation.visibility = View.VISIBLE
+                cardAir.visibility = View.GONE
+                cardSmile.visibility = View.GONE
+                tvAddress.visibility = View.GONE
+                tvLabelRecomendation.visibility = View.GONE
             }
         }else{
             binding.apply {
                 tvLabelPb.visibility = View.GONE
                 pbGetLocation.visibility = View.GONE
+                cardAir.visibility = View.VISIBLE
+                cardSmile.visibility = View.VISIBLE
+                tvAddress.visibility = View.VISIBLE
+                tvLabelRecomendation.visibility = View.VISIBLE
             }
         }
     }

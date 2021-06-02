@@ -1,11 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.result.ResultFragment">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardSmile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:padding="25dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="500dp"
+        app:cardElevation="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgSmile"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            android:src="@drawable/smile_green" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvLabelRecomendation"
+        android:layout_width="273dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Silakan berolahraga"
+        android:textColor="@color/green"
+        android:textSize="26dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardSmile"
+        app:layout_constraintStart_toStartOf="@+id/cardSmile"
+        app:layout_constraintTop_toBottomOf="@+id/cardSmile" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/grey"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvLabelRecomendation"
+        app:layout_constraintStart_toStartOf="@+id/tvLabelRecomendation"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelRecomendation">
+
+        <TextView
+            android:id="@+id/tvLabelAir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_poppins_regular"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp"
+            android:text="KUALITAS UDARA : BAIK"
+            android:textSize="14sp" />
+    </androidx.cardview.widget.CardView>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/pb_get_location"
@@ -35,5 +96,18 @@
         app:layout_constraintEnd_toEndOf="@+id/pb_get_location"
         app:layout_constraintStart_toStartOf="@+id/pb_get_location"
         app:layout_constraintTop_toBottomOf="@+id/pb_get_location" />
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/font_poppins_light"
+        android:text="Jalan Haji Ichsan, Banyuwangi 68488, Indonesia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardAir" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

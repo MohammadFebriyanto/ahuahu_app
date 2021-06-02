@@ -34,7 +34,7 @@
         android:elevation="16dp"
         android:background="@drawable/navmenu_rounded"
         app:itemIconTint="@color/white"
-        app:itemTextColor="@color/skyblue"
+        app:itemTextColor="@color/white"
         app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
