@@ -59,29 +59,29 @@ data class ItemsItem(
 data class Address(
 
 	@field:SerializedName("city")
-	val city: String,
+	val city: String? = null,
 
 	@field:SerializedName("countryCode")
-	val countryCode: String,
+	val countryCode: String? = null,
 
 	@field:SerializedName("subdistrict")
-	val subdistrict: String,
+	val subdistrict: String? = null,
 
 	@field:SerializedName("street")
-	val street: String,
+	val street: String? = null,
 
 	@field:SerializedName("district")
-	val district: String,
+	val district: String? = null,
 
 	@field:SerializedName("postalCode")
-	val postalCode: String,
+	val postalCode: String? = null,
 
 	@field:SerializedName("county")
-	val county: String,
+	val county: String? = null,
 
 	@field:SerializedName("label")
-	val label: String,
+	val label: String? = null,
 
 	@field:SerializedName("countryName")
-	val countryName: String
+	val countryName: String? = null
 )

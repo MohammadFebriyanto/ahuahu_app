@@ -1,11 +1,10 @@
 package com.cap0097.ahuahuapp.data
 
+import android.util.Log
 import com.cap0097.ahuahuapp.data.remote.ApiService
-import com.cap0097.ahuahuapp.data.remote.response.Address
-import com.cap0097.ahuahuapp.data.remote.response.ItemsItem
-import com.cap0097.ahuahuapp.data.remote.response.ResultResponse
-import com.cap0097.ahuahuapp.data.remote.response.RevGeocodeResponse
-import retrofit2.await
+import com.cap0097.ahuahuapp.data.remote.network.ApiResponse
+import com.cap0097.ahuahuapp.domain.model.Result
+import retrofit2.HttpException
 import javax.inject.Inject
 import javax.inject.Named
 
@@ -14,24 +13,38 @@ class NetworkDataSource @Inject constructor(
     @Named("geocodeApi") private val geocodeApi: ApiService
 ) {
     suspend fun getResult(lat: String, long: String, callback: LoadResultCallback) {
-        val response = resultApi.getResult(lat,long)
-        response.await().apply {
-            callback.onResultReceived(this)
-        }
-    }
-
-    suspend fun getGeocode(latLong: String, callback: LoadGeocodeCallback) {
-        val response = geocodeApi.getGeocode(latLong)
-        response.await().items.apply {
-            callback.onGeocodeReceived(this)
+        val response = resultApi.getResult(lat, long)
+        val responseGeocode = geocodeApi.getGeocode("${lat},${long}")
+        try {
+            response.let { result->
+                responseGeocode.items[0].address.let { geocode->
+                    val resultModel = Result(
+                        result.no2,
+                        result.o3,
+                        result.so2,
+                        result.kualitasUdara,
+                        result.pm10,
+                        result.rekomendasi,
+                        result.co,
+                        geocode.city.toString(),
+                        geocode.countryCode.toString(),
+                        geocode.subdistrict.toString(),
+                        geocode.street.toString(),
+                        geocode.district.toString(),
+                        geocode.postalCode.toString(),
+                        geocode.county.toString(),
+                        geocode.label.toString(),
+                        geocode.countryName.toString(),
+                    )
+                    callback.onResultReceived(Resource.Success(resultModel))
+                }
+            }
+        } catch (e: HttpException) {
+            Resource.Error(e.message(), null)
         }
     }
 
     interface LoadResultCallback {
-        fun onResultReceived(resultResponse: ResultResponse)
-    }
-
-    interface LoadGeocodeCallback {
-        fun onGeocodeReceived(geocodeResponse: List<ItemsItem>)
+        fun onResultReceived(results: Resource<Result>)
     }
 }

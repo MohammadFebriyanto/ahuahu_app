@@ -50,13 +50,13 @@ class HomeFragment : Fragment(), LocationListener {
     }
 
     override fun onLocationChanged(location: Location) {
-        Log.d("LOCATION", location.toString())
-        Log.d("LATITUDE", location.latitude.toString())
-        Log.d("LONGITUDE", location.longitude.toString())
-        val latLongString = "${location.latitude.toString()}, ${location.longitude.toString()}"
+//        Log.d("LOCATION", location.toString())
+//        Log.d("LATITUDE", location.latitude.toString())
+//        Log.d("LONGITUDE", location.longitude.toString())
         val mFragment = ResultFragment()
         val mArgs = Bundle()
-        mArgs.putString("LAT_LONG", latLongString)
+        mArgs.putString("LAT", location.latitude.toString())
+        mArgs.putString("LONG", location.latitude.toString())
         mFragment.setArguments(mArgs)
         val transaction = activity?.supportFragmentManager?.beginTransaction()
         if (transaction != null) {

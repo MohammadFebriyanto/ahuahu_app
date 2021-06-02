@@ -8,7 +8,7 @@ data class ResultResponse(
 	val no2: Double,
 
 	@field:SerializedName("o3")
-	val o3: Int,
+	val o3: Double,
 
 	@field:SerializedName("so2")
 	val so2: Double,
@@ -17,11 +17,11 @@ data class ResultResponse(
 	val kualitasUdara: String,
 
 	@field:SerializedName("pm10")
-	val pm10: Int,
+	val pm10: Double,
 
 	@field:SerializedName("rekomendasi")
 	val rekomendasi: String,
 
 	@field:SerializedName("co")
-	val co: Int
+	val co: Double
 )

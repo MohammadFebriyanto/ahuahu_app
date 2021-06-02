@@ -14,11 +14,11 @@ interface ApiService {
     suspend fun getResult(
         @Query("lat") lat : String,
         @Query("long") long : String
-    ) : Call<ResultResponse>
+    ) : ResultResponse
 
     @GET(Constants.ENDPOINT_REVGEOCODE)
     suspend fun getGeocode(
         @Query("at") latLong : String,
         @Query("apiKey") apiKey : String = Constants.API_KEY
-    ) : Call<RevGeocodeResponse<ItemsItem>>
+    ) : RevGeocodeResponse<ItemsItem>
 }

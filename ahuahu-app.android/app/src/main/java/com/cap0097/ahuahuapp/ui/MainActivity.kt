@@ -8,7 +8,9 @@ import com.cap0097.ahuahuapp.databinding.ActivityMainBinding
 import com.cap0097.ahuahuapp.ui.about.AboutFragment
 import com.cap0097.ahuahuapp.ui.history.HistoryFragment
 import com.cap0097.ahuahuapp.ui.home.HomeFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
