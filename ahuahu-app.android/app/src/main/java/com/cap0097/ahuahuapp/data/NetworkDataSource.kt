@@ -1,8 +1,6 @@
 package com.cap0097.ahuahuapp.data
 
-import android.util.Log
 import com.cap0097.ahuahuapp.data.remote.ApiService
-import com.cap0097.ahuahuapp.data.remote.network.ApiResponse
 import com.cap0097.ahuahuapp.domain.model.Result
 import retrofit2.HttpException
 import javax.inject.Inject
@@ -13,8 +11,8 @@ class NetworkDataSource @Inject constructor(
     @Named("geocodeApi") private val geocodeApi: ApiService
 ) {
     suspend fun getResult(lat: String, long: String, callback: LoadResultCallback) {
-        val response = resultApi.getResult(lat, long)
         val responseGeocode = geocodeApi.getGeocode("${lat},${long}")
+        val response = resultApi.getResult(lat, long)
         try {
             response.let { result->
                 responseGeocode.items[0].address.let { geocode->

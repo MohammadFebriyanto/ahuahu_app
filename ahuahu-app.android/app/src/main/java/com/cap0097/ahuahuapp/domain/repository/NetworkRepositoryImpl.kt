@@ -1,5 +1,6 @@
 package com.cap0097.ahuahuapp.domain.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.cap0097.ahuahuapp.data.NetworkDataSource

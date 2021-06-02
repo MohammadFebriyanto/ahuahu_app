@@ -1,8 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.5.10"
-    ext.hilt_version = '2.34.1-beta'
-    ext.hilt_jetpack_version = '1.0.0-alpha03'
+    ext{
+        kotlin_version = "1.5.10"
+        hilt_version = '2.34.1-beta'
+        hilt_jetpack_version = '1.0.0-alpha03'
+        roomVersion = '2.2.3'
+        roomRuntimeVersion = '2.2.5'
+    }
     repositories {
         google()
         mavenCentral()

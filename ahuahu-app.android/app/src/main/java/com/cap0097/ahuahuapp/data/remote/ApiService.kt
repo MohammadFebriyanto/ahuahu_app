@@ -2,7 +2,6 @@ package com.cap0097.ahuahuapp.data.remote
 
 import com.cap0097.ahuahuapp.data.remote.response.ResultResponse
 import com.aprian1337.sarap.utils.Constants
-import com.cap0097.ahuahuapp.data.remote.response.Address
 import com.cap0097.ahuahuapp.data.remote.response.ItemsItem
 import com.cap0097.ahuahuapp.data.remote.response.RevGeocodeResponse
 import retrofit2.Call
