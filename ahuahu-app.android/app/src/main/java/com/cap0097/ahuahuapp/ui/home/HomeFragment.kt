@@ -15,7 +15,6 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.cap0097.ahuahuapp.R
 import com.cap0097.ahuahuapp.databinding.FragmentHomeBinding
 import com.cap0097.ahuahuapp.ui.result.ResultFragment
@@ -40,6 +39,18 @@ class HomeFragment : Fragment(), LocationListener {
             }
     }
 
+    override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
+
+    }
+
+    override fun onProviderEnabled(provider: String) {
+        Toast.makeText(requireContext(),"You have been turned on your GPS",Toast.LENGTH_LONG).show();
+    }
+
+    override fun onProviderDisabled(provider: String) {
+        Toast.makeText(requireContext(),"Please turn on your GPS before get current location",Toast.LENGTH_LONG).show();
+    }
+
     private fun getLocation() {
         locationManager = activity?.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         if ((checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
@@ -56,7 +67,7 @@ class HomeFragment : Fragment(), LocationListener {
         val mFragment = ResultFragment()
         val mArgs = Bundle()
         mArgs.putString("LAT", location.latitude.toString())
-        mArgs.putString("LONG", location.latitude.toString())
+        mArgs.putString("LONG", location.longitude.toString())
         mFragment.setArguments(mArgs)
         val transaction = activity?.supportFragmentManager?.beginTransaction()
         if (transaction != null) {

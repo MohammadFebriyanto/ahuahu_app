@@ -6,16 +6,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import com.cap0097.ahuahuapp.R
 import com.cap0097.ahuahuapp.databinding.FragmentResultBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ResultFragment : Fragment() {
 
-    private val viewModel : ResultViewModel by viewModels()
+    private val viewModel: ResultViewModel by viewModels()
 
-    private var _binding : FragmentResultBinding? = null
+    private var _binding: FragmentResultBinding? = null
 
     private val binding get() = _binding!!
 
@@ -36,12 +38,18 @@ class ResultFragment : Fragment() {
         Log.d("TAG_LONG", argsLong!!)
         viewModel.setResult(argsLat!!, argsLong!!).observe(viewLifecycleOwner, {
             Log.d("TAG_VM", it.toString())
+            binding.apply {
+                this.tvLabelRecomendation.text = it.rekomendasi
+                this.tvAddress.text = it.label
+                binding.tvLabelAir.text = "KUALITAS UDARA: ${it.kualitasUdara}"
+                setRecommendation(it.kualitasUdara)
+            }
             setLoading(false)
         })
     }
 
-    private fun setLoading(state: Boolean){
-        if(state){
+    private fun setLoading(state: Boolean) {
+        if (state) {
             binding.apply {
                 tvLabelPb.visibility = View.VISIBLE
                 pbGetLocation.visibility = View.VISIBLE
@@ -50,7 +58,7 @@ class ResultFragment : Fragment() {
                 tvAddress.visibility = View.GONE
                 tvLabelRecomendation.visibility = View.GONE
             }
-        }else{
+        } else {
             binding.apply {
                 tvLabelPb.visibility = View.GONE
                 pbGetLocation.visibility = View.GONE
@@ -58,6 +66,56 @@ class ResultFragment : Fragment() {
                 cardSmile.visibility = View.VISIBLE
                 tvAddress.visibility = View.VISIBLE
                 tvLabelRecomendation.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    private fun setRecommendation(state: String) {
+        when (state) {
+            "BAIK" -> {
+                binding.imgSmile.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.smile_green
+                    )
+                )
+                binding.tvLabelRecomendation.setTextColor(ContextCompat.getColor(requireContext(), R.color.green))
+            }
+            "SEDANG" -> {
+                binding.imgSmile.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.smile_green
+                    )
+                )
+                binding.tvLabelRecomendation.setTextColor(ContextCompat.getColor(requireContext(), R.color.green))
+            }
+            "TIDAK SEHAT" -> {
+                binding.imgSmile.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.smile_grey
+                    )
+                )
+                binding.tvLabelRecomendation.setTextColor(ContextCompat.getColor(requireContext(), R.color.grey))
+            }
+            "SANGAT TIDAK SEHAT" -> {
+                binding.imgSmile.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.smile_grey
+                    )
+                )
+                binding.tvLabelRecomendation.setTextColor(ContextCompat.getColor(requireContext(), R.color.grey))
+            }
+            else -> {
+                binding.imgSmile.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.smile_red
+                    )
+                )
+                binding.tvLabelRecomendation.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
             }
         }
     }

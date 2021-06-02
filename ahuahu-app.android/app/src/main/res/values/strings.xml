@@ -8,4 +8,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="get_your_current_location">Get recomendation by your current location with GPS</string>
     <string name="label_loading_main">Still working...\n Please wait for a moment :)</string>
+    <string name="address">Address</string>
+    <string name="kualitas_udara_baik">KUALITAS UDARA : BAIK</string>
 </resources>
