@@ -32,6 +32,7 @@ import java.util.*
 class HomeFragment : Fragment(), LocationListener {
     private var _binding: FragmentHomeBinding? = null
     private lateinit var locationManager: LocationManager
+    private lateinit var currentTime: String
     private val locationPermissionCode = 2
     private val viewModel: HomeViewModel by viewModels()
     private val binding get() = _binding!!
@@ -58,7 +59,7 @@ class HomeFragment : Fragment(), LocationListener {
 
     override fun onProviderEnabled(provider: String) {
         Toast.makeText(requireContext(), "You have been turned on your GPS", Toast.LENGTH_LONG)
-            .show();
+            .show()
     }
 
     override fun onProviderDisabled(provider: String) {
@@ -133,8 +134,7 @@ class HomeFragment : Fragment(), LocationListener {
                     tvAddress.text = result.label
                     tvLabelAir.text = "KUALITAS UDARA: ${result.kualitasUdara}"
                 }
-                var currentTime = "Time"
-                val formatter = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     val current = LocalDateTime.now()
                     val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy | HH:mm:ss.SSS")
                     val formatted = current.format(formatter)
@@ -145,7 +145,7 @@ class HomeFragment : Fragment(), LocationListener {
                     currentTime = currentDate.toString()
                 }
                 val history = HistoryEntity(
-                    1,
+                    null,
                     result.label.toString(),
                     result.kualitasUdara,
                     result.kualitasUdara,

@@ -1,5 +1,6 @@
 package com.cap0097.ahuahuapp.ui.home
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -16,6 +17,7 @@ class HomeViewModel @Inject constructor(private val repository: Repository)  : V
 
     fun setResult(lat : String, long : String) : LiveData<Result> = repository.getResult(lat,long)
     fun addHistory(historyEntity: HistoryEntity){
+        Log.d("TAG_VM_HISTORY", historyEntity.toString())
         viewModelScope.launch(Dispatchers.IO) {
             repository.addHistory(historyEntity)
         }

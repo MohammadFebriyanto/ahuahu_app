@@ -7,7 +7,7 @@ import com.aprian1337.sarap.utils.Constants
 @Entity(tableName = Constants.TABLE_NAME_HISTORY)
 data class HistoryEntity(
     @PrimaryKey(autoGenerate = true)
-    var id: Int,
+    var id: Int? = 0,
     var address: String,
     var recomendation: String,
     var airQuality: String,
