@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -18,9 +19,14 @@ import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.cap0097.ahuahuapp.R
+import com.cap0097.ahuahuapp.data.local.HistoryEntity
 import com.cap0097.ahuahuapp.databinding.FragmentHomeBinding
 import com.cap0097.ahuahuapp.domain.model.Result
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 @AndroidEntryPoint
 class HomeFragment : Fragment(), LocationListener {
@@ -127,6 +133,25 @@ class HomeFragment : Fragment(), LocationListener {
                     tvAddress.text = result.label
                     tvLabelAir.text = "KUALITAS UDARA: ${result.kualitasUdara}"
                 }
+                var currentTime = "Time"
+                val formatter = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    val current = LocalDateTime.now()
+                    val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy | HH:mm:ss.SSS")
+                    val formatted = current.format(formatter)
+                    currentTime = formatted.toString()
+                } else {
+                    val sdf = SimpleDateFormat("dd-M-yyyy | hh:mm:ss")
+                    val currentDate = sdf.format(Date())
+                    currentTime = currentDate.toString()
+                }
+                val history = HistoryEntity(
+                    1,
+                    result.label.toString(),
+                    result.kualitasUdara,
+                    result.kualitasUdara,
+                    currentTime,
+                )
+                viewModel.addHistory(history)
             }
             binding.layoutResult.root.visibility = View.VISIBLE
         } else {
