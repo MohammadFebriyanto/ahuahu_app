@@ -9,5 +9,11 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HistoryViewModel @Inject constructor(private val repository: Repository) : ViewModel(){
-    fun getAllHistory() : LiveData<List<HistoryEntity>> = repository.getAllHistory()
+    private lateinit var history : LiveData<List<HistoryEntity>>
+
+    fun setAllHistory(){
+        history =  repository.getAllHistory()
+    }
+
+    fun getAllHistory() : LiveData<List<HistoryEntity>> = history
 }
