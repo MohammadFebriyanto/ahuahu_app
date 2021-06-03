@@ -1,5 +1,6 @@
 package com.cap0097.ahuahuapp.ui.history
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +24,7 @@ class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.MainViewHolder>() {
         return MainViewHolder(binding)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         val historyData = historyData[position]
         holder.binding.let {

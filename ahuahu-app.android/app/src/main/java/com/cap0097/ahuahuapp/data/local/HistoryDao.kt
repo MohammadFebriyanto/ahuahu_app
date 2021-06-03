@@ -5,7 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.aprian1337.sarap.utils.Constants
+import com.cap0097.ahuahuapp.utils.Constants
 
 @Dao
 interface HistoryDao {

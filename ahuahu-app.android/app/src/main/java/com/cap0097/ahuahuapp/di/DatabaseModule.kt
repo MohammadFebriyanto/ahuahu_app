@@ -2,7 +2,7 @@ package com.cap0097.ahuahuapp.di
 
 import android.content.Context
 import androidx.room.Room
-import com.aprian1337.sarap.utils.Constants
+import com.cap0097.ahuahuapp.utils.Constants
 import com.cap0097.ahuahuapp.data.local.AppDatabase
 import com.cap0097.ahuahuapp.data.local.HistoryDao
 import dagger.Module

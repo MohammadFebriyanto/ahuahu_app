@@ -10,4 +10,9 @@
     <string name="label_loading_main">Still working...\n Please wait for a moment :)</string>
     <string name="address">Address</string>
     <string name="kualitas_udara_baik">KUALITAS UDARA : BAIK</string>
+    <string name="logo_header">Logo Header</string>
+    <string name="get_location">Get Location</string>
+    <string name="location">Location :</string>
+    <string name="date">Date :</string>
+    <string name="silakan_berolahraga">Silakan berolahraga</string>
 </resources>

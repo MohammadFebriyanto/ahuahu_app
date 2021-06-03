@@ -23,7 +23,8 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:padding="10dp"
-            android:src="@drawable/smile_green" />
+            android:src="@drawable/smile_green"
+            android:contentDescription="TODO" />
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -35,9 +36,9 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
-        android:text="Silakan berolahraga"
+        android:text="@string/silakan_berolahraga"
         android:textColor="@color/green"
-        android:textSize="26dp"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="@+id/cardSmile"
         app:layout_constraintStart_toStartOf="@+id/cardSmile"
         app:layout_constraintTop_toBottomOf="@+id/cardSmile" />

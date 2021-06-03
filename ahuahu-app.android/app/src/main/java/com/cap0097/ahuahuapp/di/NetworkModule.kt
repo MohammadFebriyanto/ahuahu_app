@@ -1,6 +1,6 @@
 package com.cap0097.ahuahuapp.di
 
-import com.aprian1337.sarap.utils.Constants
+import com.cap0097.ahuahuapp.utils.Constants
 import com.cap0097.ahuahuapp.data.remote.ApiService
 import dagger.Module
 import dagger.Provides

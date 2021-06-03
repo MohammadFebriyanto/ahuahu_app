@@ -1,6 +1,7 @@
 package com.cap0097.ahuahuapp.ui.home
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
@@ -67,7 +68,7 @@ class HomeFragment : Fragment(), LocationListener {
             requireContext(),
             "Please turn on your GPS before get current location",
             Toast.LENGTH_LONG
-        ).show();
+        ).show()
     }
 
     private fun getLocation() {
@@ -115,7 +116,7 @@ class HomeFragment : Fragment(), LocationListener {
         }
     }
 
-    fun loadingShow(state: Boolean) {
+    private fun loadingShow(state: Boolean) {
         if (state) {
             binding.layoutLoading.root.visibility = View.VISIBLE
         } else {
@@ -123,6 +124,7 @@ class HomeFragment : Fragment(), LocationListener {
         }
     }
 
+    @SuppressLint("SimpleDateFormat", "SetTextI18n")
     private fun resultShow(state: Boolean, result: Result? = null) {
         if (state) {
             if (result != null) {
@@ -134,15 +136,15 @@ class HomeFragment : Fragment(), LocationListener {
                     tvAddress.text = result.label
                     tvLabelAir.text = "KUALITAS UDARA: ${result.kualitasUdara}"
                 }
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                currentTime = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     val current = LocalDateTime.now()
                     val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy | HH:mm:ss.SSS")
                     val formatted = current.format(formatter)
-                    currentTime = formatted.toString()
+                    formatted.toString()
                 } else {
                     val sdf = SimpleDateFormat("dd-M-yyyy | hh:mm:ss")
                     val currentDate = sdf.format(Date())
-                    currentTime = currentDate.toString()
+                    currentDate.toString()
                 }
                 val history = HistoryEntity(
                     null,
@@ -159,7 +161,7 @@ class HomeFragment : Fragment(), LocationListener {
         }
     }
 
-    fun getCurrentShow(state: Boolean) {
+    private fun getCurrentShow(state: Boolean) {
         if (state) {
             binding.layoutGetLocation.root.visibility = View.VISIBLE
         } else {
@@ -167,7 +169,7 @@ class HomeFragment : Fragment(), LocationListener {
         }
     }
 
-    fun setRecommendation(state: String) {
+    private fun setRecommendation(state: String) {
         when (state) {
             "BAIK" -> {
                 binding.layoutResult.apply {
