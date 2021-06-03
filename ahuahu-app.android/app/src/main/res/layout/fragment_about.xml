@@ -28,6 +28,7 @@
         android:fontFamily="@font/font_poppins_regular"
         android:text="@string/about"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/bg_about"
         app:layout_constraintStart_toStartOf="@+id/bg_about"
