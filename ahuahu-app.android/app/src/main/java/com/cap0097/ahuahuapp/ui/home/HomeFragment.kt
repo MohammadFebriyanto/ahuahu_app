@@ -68,6 +68,8 @@ class HomeFragment : Fragment(), LocationListener {
             "Please turn on your GPS before get current location",
             Toast.LENGTH_LONG
         ).show()
+        loadingShow(false)
+        getCurrentShow(true)
     }
 
     private fun getLocation() {
@@ -92,9 +94,11 @@ class HomeFragment : Fragment(), LocationListener {
     override fun onLocationChanged(location: Location) {
         val lat = location.latitude.toString()
         val long = location.longitude.toString()
-        viewModel.setResult(lat, long).observe(viewLifecycleOwner, {
+        viewModel.setResult(lat,long)
+        viewModel.getResult().observe(viewLifecycleOwner, {
             binding.apply {
                 loadingShow(false)
+                getCurrentShow(false)
                 resultShow(true, it)
             }
         })
