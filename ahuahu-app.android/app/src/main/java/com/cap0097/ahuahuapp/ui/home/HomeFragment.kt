@@ -9,7 +9,6 @@ import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,7 +36,6 @@ class HomeFragment : Fragment(), LocationListener {
     private val locationPermissionCode = 2
     private val viewModel: HomeViewModel by viewModels()
     private val binding get() = _binding!!
-    private var FLAG = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,15 +47,9 @@ class HomeFragment : Fragment(), LocationListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.layoutGetLocation.btnGetLocation.setOnClickListener {
+            getCurrentShow(false)
+            loadingShow(true)
             getLocation()
-            Log.d("TAG_FLAG", FLAG.toString())
-            if(FLAG == 1){
-                getCurrentShow(false)
-                loadingShow(true)
-            }else{
-                loadingShow(false)
-                getCurrentShow(true)
-            }
         }
     }
 
@@ -66,18 +58,18 @@ class HomeFragment : Fragment(), LocationListener {
     }
 
     override fun onProviderEnabled(provider: String) {
-        FLAG = 1
         Toast.makeText(requireContext(), "You have been turned on your GPS", Toast.LENGTH_LONG)
             .show()
     }
 
     override fun onProviderDisabled(provider: String) {
-        FLAG = 0
         Toast.makeText(
             requireContext(),
             "Please turn on your GPS before get current location",
             Toast.LENGTH_LONG
         ).show()
+        loadingShow(false)
+        getCurrentShow(true)
     }
 
     private fun getLocation() {
@@ -87,7 +79,6 @@ class HomeFragment : Fragment(), LocationListener {
                 Manifest.permission.ACCESS_FINE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED)
         ) {
-            FLAG = 1
             activity?.let {
                 ActivityCompat.requestPermissions(
                     it,
@@ -96,7 +87,6 @@ class HomeFragment : Fragment(), LocationListener {
                 )
             }
         } else {
-            FLAG = 1
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5f, this)
         }
     }
