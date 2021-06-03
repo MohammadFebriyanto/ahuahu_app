@@ -9,14 +9,28 @@
     <!-- TODO: Update blank fragment layout -->
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="229dp"
-        android:layout_height="233dp"
-        android:layout_marginTop="92dp"
-        android:src="@drawable/logo_square"
+        android:id="@+id/bg_about"
+        android:layout_width="267dp"
+        android:layout_height="473dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/bg_about"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.59"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="TODO" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="286dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/about"
+        android:textAlignment="center"
+        android:fontFamily="@font/font_poppins_regular"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
