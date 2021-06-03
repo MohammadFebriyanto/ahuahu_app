@@ -8,30 +8,29 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <ImageView
-        android:id="@+id/bg_about"
-        android:layout_width="270dp"
-        android:layout_height="470dp"
-        android:layout_marginTop="4dp"
-        android:contentDescription="TODO"
-        android:src="@drawable/bg_about"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.59"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textView"
-        android:layout_width="270dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="362dp"
+        android:layout_height="187dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/font_poppins_regular"
-        android:text="@string/about_desc"
+        android:text="@string/about_description"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/bg_about"
-        app:layout_constraintStart_toStartOf="@+id/bg_about"
-        app:layout_constraintTop_toBottomOf="@+id/bg_about" />
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="361dp"
+        android:layout_height="418dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/bg_about"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

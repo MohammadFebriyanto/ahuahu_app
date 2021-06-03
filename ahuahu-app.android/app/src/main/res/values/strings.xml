@@ -15,5 +15,5 @@
     <string name="location">Location :</string>
     <string name="date">Date :</string>
     <string name="silakan_berolahraga">Silakan berolahraga</string>
-    <string name="about">Ahuahu is a location recommendation application for exercising.  ahuahu can find out location around us has clean air quality for exercising or not. This application helps for people who are confused and looking for a location with fresh air for sports or walk.</string>
+    <string name="about_description">Ahuahu is a location recommendation application for exercising.  ahuahu can find out location around us has clean air quality for exercising or not. This application helps for people who are confused and looking for a location with fresh air for sports or walk.</string>
 </resources>
