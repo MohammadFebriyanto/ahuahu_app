@@ -1,7 +1,7 @@
 package com.cap0097.ahuahuapp.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.cap0097.ahuahuapp.R
 import com.cap0097.ahuahuapp.databinding.ActivityMainBinding
