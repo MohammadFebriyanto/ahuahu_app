@@ -1,6 +1,7 @@
 package com.cap0097.ahuahuapp.ui.history
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,7 +32,11 @@ class HistoryFragment : Fragment() {
         setupRv()
         viewModel.setAllHistory()
         viewModel.getAllHistory().observe(viewLifecycleOwner, {
-            adapter.setHistoryData(it)
+            if(it.isNotEmpty()){
+                adapter.setHistoryData(it)
+            }else{
+                binding.tvNull.visibility = View.VISIBLE
+            }
         })
     }
 

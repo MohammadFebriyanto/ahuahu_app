@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".ui.history.HistoryFragment">
 
+    <TextView
+        android:id="@+id/tvNull"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:fontFamily="@font/font_poppins_lightitalic"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="@string/you_don_t_have_any_history"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_history"
         android:layout_width="match_parent"

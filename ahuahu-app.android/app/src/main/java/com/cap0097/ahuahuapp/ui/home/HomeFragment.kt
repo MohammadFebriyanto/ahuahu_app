@@ -136,7 +136,7 @@ class HomeFragment : Fragment(), LocationListener {
                 binding.layoutResult.apply {
                     tvLabelRecomendation.text = result.rekomendasi
                     tvAddress.text = result.label
-                    tvLabelAir.text = "KUALITAS UDARA: ${result.kualitasUdara}"
+                    tvLabelAir.text = "AIR QUALITY: ${result.kualitasUdara}"
                 }
                 currentTime = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     val current = LocalDateTime.now()

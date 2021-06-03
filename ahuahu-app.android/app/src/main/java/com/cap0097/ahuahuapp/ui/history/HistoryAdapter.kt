@@ -28,7 +28,7 @@ class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.MainViewHolder>() {
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         val historyData = historyData[position]
         holder.binding.let {
-            it.tvRecommendation.text = "Kualitas : ${historyData.airQuality}"
+            it.tvRecommendation.text = "Quality : ${historyData.airQuality}"
             it.tvLocation.text = historyData.address
             it.tvDate.text = historyData.date
         }

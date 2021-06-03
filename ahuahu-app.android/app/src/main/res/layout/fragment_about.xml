@@ -21,7 +21,6 @@
             app:layout_constraintHorizontal_bias="0.59"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <!--    Can't access ViewModels from detached fragment-->
         <TextView
             android:id="@+id/textView"
             android:layout_width="0dp"
