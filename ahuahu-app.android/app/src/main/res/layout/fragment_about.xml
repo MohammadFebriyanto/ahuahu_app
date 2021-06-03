@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/bg_about"
-        android:layout_width="267dp"
-        android:layout_height="473dp"
+        android:layout_width="270dp"
+        android:layout_height="470dp"
         android:layout_marginTop="4dp"
         android:contentDescription="TODO"
         android:src="@drawable/bg_about"
@@ -22,15 +22,15 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="286dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="270dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/font_poppins_regular"
         android:text="@string/about"
         android:textAlignment="center"
-        android:fontFamily="@font/font_poppins_regular"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintEnd_toEndOf="@+id/bg_about"
+        app:layout_constraintStart_toStartOf="@+id/bg_about"
+        app:layout_constraintTop_toBottomOf="@+id/bg_about" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
