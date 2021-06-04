@@ -8,6 +8,8 @@ data class Result(
     val pm10: Double,
     val rekomendasi: String,
     val co: Double,
+    val desc: String,
+    val link: String,
 
     val city: String?=null,
     val countryCode: String?=null,

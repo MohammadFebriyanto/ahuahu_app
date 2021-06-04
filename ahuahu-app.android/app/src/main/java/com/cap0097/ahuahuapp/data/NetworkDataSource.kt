@@ -24,6 +24,8 @@ class NetworkDataSource @Inject constructor(
                         result.pm10,
                         result.rekomendasi,
                         result.co,
+                        result.deskripsi,
+                        result.link,
                         geocode.city.toString(),
                         geocode.countryCode.toString(),
                         geocode.subdistrict.toString(),

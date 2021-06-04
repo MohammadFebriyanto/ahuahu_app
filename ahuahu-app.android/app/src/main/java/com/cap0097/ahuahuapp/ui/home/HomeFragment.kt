@@ -14,10 +14,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.bumptech.glide.Glide
 import com.cap0097.ahuahuapp.R
 import com.cap0097.ahuahuapp.data.local.HistoryEntity
 import com.cap0097.ahuahuapp.databinding.FragmentHomeBinding
@@ -130,13 +130,19 @@ class HomeFragment : Fragment(), LocationListener {
     private fun resultShow(state: Boolean, result: Result? = null) {
         if (state) {
             if (result != null) {
-                result.kualitasUdara.apply {
-                    setRecommendation(this)
-                }
                 binding.layoutResult.apply {
                     tvLabelRecomendation.text = result.rekomendasi
                     tvAddress.text = result.label
                     tvLabelAir.text = "AIR QUALITY: ${result.kualitasUdara}"
+                    tvDesc.text = result.desc.replaceFirstChar {
+                        if (it.isLowerCase()) it.titlecase(
+                            Locale.getDefault()
+                        ) else it.toString()
+                    }
+                    Glide.with(requireActivity())
+                        .load(result.link)
+                        .placeholder(R.drawable.logo_placeholder)
+                        .into(imgSmile)
                 }
                 currentTime = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     val current = LocalDateTime.now()
@@ -169,95 +175,5 @@ class HomeFragment : Fragment(), LocationListener {
         } else {
             binding.layoutGetLocation.root.visibility = View.GONE
         }
-    }
-
-    private fun setRecommendation(state: String) {
-        when (state) {
-            "BAIK" -> {
-                binding.layoutResult.apply {
-                    imgSmile.setImageDrawable(
-                        ContextCompat.getDrawable(
-                            requireContext(),
-                            R.drawable.smile_green
-                        )
-                    )
-                    tvLabelRecomendation.setTextColor(
-                        ContextCompat.getColor(
-                            requireContext(),
-                            R.color.green
-                        )
-                    )
-                }
-            }
-            "SEDANG" -> {
-                binding.layoutResult.apply {
-                    imgSmile.setImageDrawable(
-                        ContextCompat.getDrawable(
-                            requireContext(),
-                            R.drawable.smile_green
-                        )
-                    )
-                    tvLabelRecomendation.setTextColor(
-                        ContextCompat.getColor(
-                            requireContext(),
-                            R.color.green
-                        )
-                    )
-                }
-            }
-            "TIDAK SEHAT" -> {
-                binding.layoutResult.apply {
-                    imgSmile.setImageDrawable(
-                        ContextCompat.getDrawable(
-                            requireContext(),
-                            R.drawable.smile_grey
-                        )
-                    )
-                    tvLabelRecomendation.setTextColor(
-                        ContextCompat.getColor(
-                            requireContext(),
-                            R.color.grey
-                        )
-                    )
-                }
-            }
-            "SANGAT TIDAK SEHAT" -> {
-                binding.layoutResult.apply {
-                    imgSmile.setImageDrawable(
-                        ContextCompat.getDrawable(
-                            requireContext(),
-                            R.drawable.smile_grey
-                        )
-                    )
-                    tvLabelRecomendation.setTextColor(
-                        ContextCompat.getColor(
-                            requireContext(),
-                            R.color.grey
-                        )
-                    )
-                }
-            }
-
-            else -> {
-
-                binding.layoutResult.apply {
-                    imgSmile.setImageDrawable(
-                        ContextCompat.getDrawable(
-                            requireContext(),
-                            R.drawable.smile_red
-                        )
-                    )
-                    tvLabelRecomendation.setTextColor(
-                        ContextCompat.getColor(
-                            requireContext(),
-                            R.color.red
-                        )
-                    )
-                }
-
-            }
-        }
-
-
     }
 }
