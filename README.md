@@ -79,7 +79,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="/assets/screenshot_1.jpg" width="150px" height="auto"></img>
+<img src="/assets/screenshot_1.jpg" width="175px" height="auto"></img>
+<img src="/assets/screenshot_2.jpg" width="175px" height="auto"></img>
+<img src="/assets/screenshot_3.jpg" width="175px" height="auto"></img>
+<img src="/assets/screenshot_4.jpg" width="175px" height="auto"></img>
 
 There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
@@ -145,7 +148,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/MohammadFebriyanto/ahuahu_app/issues) for a list of proposed features (and known issues).
 
 
 
@@ -192,6 +195,8 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 * [JVectorMap](http://jvectormap.com)
 * [Font Awesome](https://fontawesome.com)
 
+## Special Thanks To
+<a href="http://bangkit.academy"><img src="/assets/logo_bangkit.png" width="200px" height="auto"></a>
 
 
 
