@@ -33,7 +33,7 @@
   <h3 align="center">Ahuahu App</h3>
 
   <p align="center">
-    A sports recommendation application using machine learning methods based on air quality at the location!
+    A sports recommendation application using machine learning methods<br>based on air quality at the location!
     <br />
     <a href="https://github.com/MohammadFebriyanto/ahuahu_app"><strong>Explore the docs »</strong></a>
     <br />
