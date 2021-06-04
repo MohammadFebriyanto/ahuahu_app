@@ -22,6 +22,12 @@ data class ResultResponse(
 	@field:SerializedName("rekomendasi")
 	val rekomendasi: String,
 
+	@field:SerializedName("deskripsi")
+	val deskripsi: String,
+
+	@field:SerializedName("link")
+	val link: String,
+
 	@field:SerializedName("co")
 	val co: Double
 )
