@@ -26,15 +26,15 @@ def api_id():
             pm10, so2, co, o3, no2 = req(long,lat)
             results = int(predict(pm10, so2, co, o3, no2))
             if results==0:
-                hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'BAIK', 'rekomendasi': 'Silahkan berolahraga'}
+                hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'Good', 'rekomendasi': 'Let\'s do some exercise'}
             elif results==1:
-                hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'SEDANG', 'rekomendasi': 'Silahkan berolahraga'}
+                hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'Moderate', 'rekomendasi': 'Prefer you stay at home'}
             elif results==2:
-                hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'TIDAK SEHAT', 'rekomendasi': 'Jangan berolahraga'}
+                hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'Unhealthy', 'rekomendasi': 'Prefer you stay at home'}
             elif results==3:
-                hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'SANGAT TIDAK SEHAT', 'rekomendasi': 'Jangan berolahraga'}
+                hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'Very Unhealthy', 'rekomendasi': 'Avoid outdoor activity'}
             else:
-                hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'BERBAHAYA', 'rekomendasi': 'Lebih baik di rumah'}
+                hasil = {'pm10':pm10, 'so2':so2, 'co':co, 'o3':o3, 'no2':no2, 'kualitas_udara': 'Hazardous', 'rekomendasi': 'Please avoid outdoor activity'}
         except:
             return "Error: longitude and latitude is not valid"
     else:
