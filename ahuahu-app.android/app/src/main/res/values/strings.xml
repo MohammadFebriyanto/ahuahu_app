@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AhuahuApp</string>
+    <string name="logo_splash">Logo Splash</string>
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="about">About</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="get_your_current_location">Get recomendation by your current location with GPS</string>
+    <string name="label_loading_main">Still working...\n Please wait for a moment :)</string>
+    <string name="address">Address</string>
+    <string name="kualitas_udara_baik">Quality</string>
+    <string name="logo_header">Logo Header</string>
+    <string name="get_location">Get Location</string>
+    <string name="location">Location :</string>
+    <string name="date">Date :</string>
+    <string name="silakan_berolahraga">Run now!</string>
+    <string name="about_desc">Ahuahu App is a location recommendation application for exercising.  Ahuahu can find out location around us has clean air quality for exercising or not. This application helps for people who are confused and looking for a location with fresh air for sports or walk.</string>
+    <string name="you_don_t_have_any_history">You don\'t have any history :)</string>
+</resources>
