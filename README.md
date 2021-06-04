@@ -26,7 +26,7 @@
 
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/MohammadFebriyanto/ahuahu_app">
     <img src="assets/logo_blue.png" alt="Logo" width="auto" height="125">
   </a>
   
