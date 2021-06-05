@@ -27,7 +27,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/MohammadFebriyanto/ahuahu_app">
-    <img src="assets/logo_blue.png" alt="Logo" width="auto" height="125">
+    <img src="assets/logo_blue.png" alt="Logo" width="70%" height="auto">
   </a>
   
   <h3 align="center">Ahuahu App</h3>
@@ -79,10 +79,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+<p align="center">
 <img src="/assets/screenshot_1.jpg" width="175px" height="auto"></img>
 <img src="/assets/screenshot_2.jpg" width="175px" height="auto"></img>
 <img src="/assets/screenshot_3.jpg" width="175px" height="auto"></img>
 <img src="/assets/screenshot_4.jpg" width="175px" height="auto"></img>
+</p>
 
 There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
