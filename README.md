@@ -100,10 +100,19 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 ### Built With
 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
 
+Android Development :
+* [Android Studio](https://developer.android.com/studio)
+* [Kotlin](https://developer.android.com/kotlin)
+* [MVVM Architecture](https://developer.android.com/jetpack/guide)
+* [Retrofit2](https://square.github.io/retrofit/)
+* [Dagger-Hilt Dependency Injection](https://dagger.dev/hilt/)
+* [Room Database](https://developer.android.com/jetpack/androidx/releases/room)
+* [Lottie](https://github.com/airbnb/lottie-android)
+
+Machine Learning :
+
+Cloud Computing :
 
 
 <!-- GETTING STARTED -->
@@ -122,23 +131,10 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. Download the app from releases
+2. Install the app on your device
+3. Open it
 
-
-
-<!-- USAGE EXAMPLES -->
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
