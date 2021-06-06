@@ -86,16 +86,7 @@
 <img src="/assets/screenshot_4.jpg" width="175px" height="auto"></img>
 </p>
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+Ahuahu App is an application that can recommend to you ‘is today the best day to do some exercise outdoors or not?’. The recommendation will be determined based on the air quality index. The problems are many people want to exercise at locations that have good air quality and fresh air, air quality in a location does not always support people to exercise outdoors, and air quality has a big impact on the people who want to exercise outdoors. Nowadays, people have to check the air quality index manually or even don't check the air quality index when they want to do exercise outdoors. Since COVID-19 pandemic, in Jakarta, the number of people cycling has increased 10 times. People like to exercise outdoors such as cycling, running, and walking around. To make people comfortable to exercise and breathe fresh air, we are offering an **Ahuahu App**. Ahuahu app is an application for location recommendation for exercising. This application can help people to recommend locations that have good quality air for exercise around the user area.  Good quality air for exercise can improve the quality of exercise. Our target users are people who have hobbies to do outdoor activities/outdoor exercise such as running, cycling, and other outdoor activities.
 
 ### Built With
 
@@ -109,6 +100,12 @@ For Android Development :
 * [Lottie](https://github.com/airbnb/lottie-android)
 
 For Machine Learning :
+* [Google Colab](https://colab.research.google.com)
+* [Tensorflow](https://www.tensorflow.org)
+* [Numpy](https://numpy.org)
+* [Pandas](https://pandas.pydata.org)
+* [Keras](https://keras.io)
+* [Scikit Learn](https://scikit-learn.org)
 
 For Cloud Computing :
 
@@ -157,20 +154,26 @@ Contributions are what make the open source community such an amazing place to b
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the Bangkit Academy License. See `LICENSE` for more information.
 
 
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+* Afif Tri Farhan - [LinkedIn: ](https://www.linkedin.com) - c0020139@bangkit.academy
+* Aprilia Susanti - [LinkedIn: Aprilia Susanti](https://www.linkedin.com/in/aprilia-susanti-3bb0841a9) - m0040191@bangkit.academy
+* Dwiky Aprian Ashari - [LinkedIn: Dwiki Aprian Ashari](https://www.linkedin.com/in/dwiky-aprian-ashari-697082148/) - a2582404@bangkit.academy
+* Mohammad Febriyanto - [LinkedIn: ](https://www.linkedin.com) - c0020135@bangkit.academy
+* Rainal Yusril Bahrunnafar - [LinkedIn: ](https://www.linkedin.com) - m0040195@bangkit.academy
+* Ridha Rizkia Putri - [LinkedIn: ](https://www.linkedin.com) - a2582408@bangkit.academy
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/MohammadFebriyanto/ahuahu_app](https://github.com/MohammadFebriyanto/ahuahu_app)
 
 
 
 <!-- ACKNOWLEDGEMENTS -->
+<!--
 ## Acknowledgements
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Img Shields](https://shields.io)
@@ -183,6 +186,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 * [Sticky Kit](http://leafo.net/sticky-kit)
 * [JVectorMap](http://jvectormap.com)
 * [Font Awesome](https://fontawesome.com)
+-->
 
 ## Special Thanks To
 <a href="http://bangkit.academy"><img src="/assets/logo_bangkit.png" width="200px" height="auto"></a>
