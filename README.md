@@ -99,9 +99,7 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-Android Development :
+For Android Development :
 * [Android Studio](https://developer.android.com/studio)
 * [Kotlin](https://developer.android.com/kotlin)
 * [MVVM Architecture](https://developer.android.com/jetpack/guide)
@@ -110,9 +108,9 @@ Android Development :
 * [Room Database](https://developer.android.com/jetpack/androidx/releases/room)
 * [Lottie](https://github.com/airbnb/lottie-android)
 
-Machine Learning :
+For Machine Learning :
 
-Cloud Computing :
+For Cloud Computing :
 
 
 <!-- GETTING STARTED -->
