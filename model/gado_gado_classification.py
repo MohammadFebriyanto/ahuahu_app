@@ -77,9 +77,6 @@ feature_names = ['pm10', 'so2', 'co', 'o3', 'no2']
 X = np.array(df[feature_names], dtype=float)
 y = np.array(df.categori, dtype=int)
 
-#X = df[feature_names]
-#y = df.categori
-
 df.categori.value_counts()
 
 from keras.models import Sequential
