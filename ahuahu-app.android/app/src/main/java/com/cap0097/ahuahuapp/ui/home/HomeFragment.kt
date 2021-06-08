@@ -88,7 +88,6 @@ class HomeFragment : Fragment(), LocationListener {
         Intent(requireContext(), ResultActivity::class.java).apply {
             putExtra(ResultActivity.EXTRA_LAT, lat)
             putExtra(ResultActivity.EXTRA_LONG, long)
-            showLoading(false)
             startActivity(this)
         }
 
@@ -116,7 +115,7 @@ class HomeFragment : Fragment(), LocationListener {
         }
     }
 
-    fun showLoading(state: Boolean) {
+    private fun showLoading(state: Boolean) {
         if (state) {
             binding.apply {
                 this.layoutGetLocation.pbBar.visibility = View.VISIBLE
@@ -126,5 +125,10 @@ class HomeFragment : Fragment(), LocationListener {
                 this.layoutGetLocation.pbBar.visibility = View.GONE
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        showLoading(false)
     }
 }

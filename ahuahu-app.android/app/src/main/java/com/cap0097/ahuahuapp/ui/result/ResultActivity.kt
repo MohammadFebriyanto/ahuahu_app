@@ -1,20 +1,16 @@
 package com.cap0097.ahuahuapp.ui.result
 
 import android.annotation.SuppressLint
-import android.location.LocationManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.cap0097.ahuahuapp.R
 import com.cap0097.ahuahuapp.data.local.HistoryEntity
 import com.cap0097.ahuahuapp.databinding.ActivityResultBinding
-import com.cap0097.ahuahuapp.databinding.ResultBinding
 import com.cap0097.ahuahuapp.domain.model.Result
-import com.cap0097.ahuahuapp.ui.home.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
@@ -24,11 +20,11 @@ import java.util.*
 @AndroidEntryPoint
 class ResultActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityResultBinding
+    private lateinit var binding: ActivityResultBinding
     private lateinit var currentTime: String
     private val viewModel: ResultViewModel by viewModels()
 
-    companion object{
+    companion object {
         const val EXTRA_LONG = "extra_long"
         const val EXTRA_LAT = "extra_lat"
     }
@@ -47,7 +43,7 @@ class ResultActivity : AppCompatActivity() {
         }
         val lat = intent.getStringExtra(EXTRA_LAT)
         val long = intent.getStringExtra(EXTRA_LONG)
-        viewModel.setResult(lat!!,long!!)
+        viewModel.setResult(lat!!, long!!)
         viewModel.getResult().observe(this, {
             binding.apply {
                 loadingShow(false)
