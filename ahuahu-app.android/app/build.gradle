@@ -17,8 +17,8 @@ android {
         applicationId "com.cap0097.ahuahuapp"
         minSdkVersion 24
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "v1.0.1-stable"
         buildConfigField("String", "AUTH_TOKEN", API_KEY)
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
