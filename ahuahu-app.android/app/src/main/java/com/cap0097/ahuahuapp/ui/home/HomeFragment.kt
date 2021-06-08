@@ -1,14 +1,12 @@
 package com.cap0097.ahuahuapp.ui.home
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,26 +15,13 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import com.bumptech.glide.Glide
-import com.cap0097.ahuahuapp.R
-import com.cap0097.ahuahuapp.data.local.HistoryEntity
 import com.cap0097.ahuahuapp.databinding.FragmentHomeBinding
-import com.cap0097.ahuahuapp.domain.model.Result
 import com.cap0097.ahuahuapp.ui.result.ResultActivity
-import dagger.hilt.android.AndroidEntryPoint
-import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.util.*
 
-@AndroidEntryPoint
 class HomeFragment : Fragment(), LocationListener {
     private var _binding: FragmentHomeBinding? = null
     private lateinit var locationManager: LocationManager
-//    private lateinit var currentTime: String
     private val locationPermissionCode = 2
-//    private val viewModel: HomeViewModel by viewModels()
     private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,9 +33,8 @@ class HomeFragment : Fragment(), LocationListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        showLoading(false)
         binding.layoutGetLocation.btnGetLocation.setOnClickListener {
-//            getCurrentShow(false)
-//            loadingShow(true)
             getLocation()
         }
     }
@@ -70,8 +54,6 @@ class HomeFragment : Fragment(), LocationListener {
             "Please turn on your GPS before get current location",
             Toast.LENGTH_LONG
         ).show()
-//        loadingShow(false)
-//        getCurrentShow(true)
     }
 
     private fun getLocation() {
@@ -81,6 +63,12 @@ class HomeFragment : Fragment(), LocationListener {
                 Manifest.permission.ACCESS_FINE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED)
         ) {
+            showLoading(false)
+            Toast.makeText(
+                requireContext(),
+                "Please turn on your GPS before get current location",
+                Toast.LENGTH_LONG
+            ).show()
             activity?.let {
                 ActivityCompat.requestPermissions(
                     it,
@@ -89,6 +77,7 @@ class HomeFragment : Fragment(), LocationListener {
                 )
             }
         } else {
+            showLoading(true)
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5f, this)
         }
     }
@@ -96,9 +85,10 @@ class HomeFragment : Fragment(), LocationListener {
     override fun onLocationChanged(location: Location) {
         val lat = location.latitude.toString()
         val long = location.longitude.toString()
-        Intent(requireContext(), Result::class.java).apply {
+        Intent(requireContext(), ResultActivity::class.java).apply {
             putExtra(ResultActivity.EXTRA_LAT, lat)
             putExtra(ResultActivity.EXTRA_LONG, long)
+            showLoading(false)
             startActivity(this)
         }
 
@@ -111,69 +101,30 @@ class HomeFragment : Fragment(), LocationListener {
     ) {
         if (requestCode == locationPermissionCode) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(requireContext(), "Permission Granted", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "Permission Granted!",
+                    Toast.LENGTH_LONG
+                ).show()
             } else {
-                Toast.makeText(requireContext(), "Permission Denied", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "Permission Denied!",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
     }
 
-//    private fun loadingShow(state: Boolean) {
-//        if (state) {
-//            binding.layoutLoading.root.visibility = View.VISIBLE
-//        } else {
-//            binding.layoutLoading.root.visibility = View.GONE
-//        }
-//    }
-
-//    @SuppressLint("SimpleDateFormat", "SetTextI18n")
-//    private fun resultShow(state: Boolean, result: Result? = null) {
-//        if (state) {
-//            if (result != null) {
-//                binding.layoutResult.apply {
-//                    tvLabelRecomendation.text = result.rekomendasi
-//                    tvAddress.text = result.label
-//                    tvLabelAir.text = "AIR QUALITY: ${result.kualitasUdara}"
-//                    tvDesc.text = result.desc.replaceFirstChar {
-//                        if (it.isLowerCase()) it.titlecase(
-//                            Locale.getDefault()
-//                        ) else it.toString()
-//                    }
-//                    Glide.with(requireActivity())
-//                        .load(result.link)
-//                        .placeholder(R.drawable.logo_placeholder)
-//                        .into(imgSmile)
-//                }
-//                currentTime = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                    val current = LocalDateTime.now()
-//                    val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy | HH:mm:ss.SSS")
-//                    val formatted = current.format(formatter)
-//                    formatted.toString()
-//                } else {
-//                    val sdf = SimpleDateFormat("dd-M-yyyy | hh:mm:ss")
-//                    val currentDate = sdf.format(Date())
-//                    currentDate.toString()
-//                }
-//                val history = HistoryEntity(
-//                    null,
-//                    result.label.toString(),
-//                    result.kualitasUdara,
-//                    result.kualitasUdara,
-//                    currentTime,
-//                )
-//                viewModel.addHistory(history)
-//            }
-//            binding.layoutResult.root.visibility = View.VISIBLE
-//        } else {
-//            binding.layoutResult.root.visibility = View.GONE
-//        }
-//    }
-//
-//    private fun getCurrentShow(state: Boolean) {
-//        if (state) {
-//            binding.layoutGetLocation.root.visibility = View.VISIBLE
-//        } else {
-//            binding.layoutGetLocation.root.visibility = View.GONE
-//        }
-//    }
+    fun showLoading(state: Boolean) {
+        if (state) {
+            binding.apply {
+                this.layoutGetLocation.pbBar.visibility = View.VISIBLE
+            }
+        } else {
+            binding.apply {
+                this.layoutGetLocation.pbBar.visibility = View.GONE
+            }
+        }
+    }
 }

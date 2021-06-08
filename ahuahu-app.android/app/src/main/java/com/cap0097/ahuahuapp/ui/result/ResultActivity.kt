@@ -38,6 +38,7 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
         loadingShow(true)
+        resultShow(false)
         binding.include.toolbar.apply {
             setNavigationIcon(R.drawable.ic_baseline_arrow_back_ios_24)
             setNavigationOnClickListener {
