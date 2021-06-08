@@ -126,23 +126,15 @@ How to use Ahuahu App :
 * The result recommendation will be show
 
 
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/MohammadFebriyanto/ahuahu_app/issues) for a list of proposed features (and known issues).
-
-
-
 <!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch 
+3. Commit your Changes 
+4. Push to the Branch 
 5. Open a Pull Request
 
 
@@ -165,7 +157,13 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* 
+* Potential datasets : https://data.jakarta.go.id/dataset/indeks-standar-pencemaran-udara-ispu-tahun-2020/resource/0f168955-5771-43a2-9fed-9c74ac3c268e
+* Potential API: https://aqicn.org
+* Academic paper / journal from explorations :
+1. ML for Classification (https://datajobs.com/data-science-repo/Supervised-Learning-[SB-Kotsiantis].pdf; https://www.researchgate.net/publication/319370844_Classification_Techniques_in_Machine_Learning_Applications_and_Issues; https://www.researchgate.net/profile/J-E-T-Akinsola/publication/318338750_Supervised_Machine_Learning_Algorithms_Classification_and_Comparison/links/596474ae0f7e9b819497e053/Supervised-Machine-Learning-Algorithms-Classification-and-Comparison.pdf )
+2. Parameter Optimization (https://arxiv.org/abs/2007.15745)
+3. Human Health Effect of Air Pollution (https://www.sciencedirect.com/science/article/pii/S1877042814054986; https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8746201)
+
 
 ## Special Thanks To
 <a href="http://bangkit.academy"><img src="/assets/logo_bangkit.png" width="200px" height="auto"></a>
