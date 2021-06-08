@@ -109,7 +109,8 @@ For Cloud Computing :
 
 ### Prerequisites
 
-This app only can run on Android smartphone (Stable for Android 7+)
+* Stable for Android 7+
+* Internet Connection
 
 ### Installation
 
@@ -119,9 +120,10 @@ This app only can run on Android smartphone (Stable for Android 7+)
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+How to use Ahuahu App :
+* Open Ahuahu App
+* Click Get Location button in home page
+* The result recommendation will be show
 
 
 
