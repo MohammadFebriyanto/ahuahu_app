@@ -27,7 +27,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/MohammadFebriyanto/ahuahu_app">
-    <img src="assets/logo_blue.png" alt="Logo" width="auto" height="125">
+    <img src="assets/logo_blue.png" alt="Logo" width="70%" height="auto">
   </a>
   
   <h3 align="center">Ahuahu App</h3>
@@ -79,73 +79,58 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="/assets/screenshot_1.jpg" width="150px" height="auto"></img>
+<p align="center">
+<img src="/assets/screenshot_1.jpg" width="175px" height="auto"></img>
+<img src="/assets/screenshot_2.jpg" width="175px" height="auto"></img>
+<img src="/assets/screenshot_3.jpg" width="175px" height="auto"></img>
+<img src="/assets/screenshot_4.jpg" width="175px" height="auto"></img>
+</p>
+Hello, we would like to introduce Ahuahu. Ahuahu app is an application that can recommend you "is today the best day to do exercise outdoor or not?".  The recommendation will be determine based on air quality index. This apps can help you to make decision for exercise outdoor or indoor. This application can help a people to recommend location that has good quality air for exercise around user area. Good quality air for exercise can improve the quality of exercise.
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+For Android Development :
+* [Android Studio](https://developer.android.com/studio)
+* [Kotlin](https://developer.android.com/kotlin)
+* [MVVM Architecture](https://developer.android.com/jetpack/guide)
+* [Retrofit2](https://square.github.io/retrofit/)
+* [Dagger-Hilt Dependency Injection](https://dagger.dev/hilt/)
+* [Room Database](https://developer.android.com/jetpack/androidx/releases/room)
+* [Lottie](https://github.com/airbnb/lottie-android)
 
+For Machine Learning :
+
+For Cloud Computing :
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* Stable for Android 7+
+* Internet Connection
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. Download the app from releases
+2. Install the app on your device
+3. Open it
 
-
-
-<!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+How to use Ahuahu App :
+* Open Ahuahu App
+* Click Get Location button in home page
+* The result recommendation will be show
 
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/MohammadFebriyanto/ahuahu_app/issues) for a list of proposed features (and known issues).
 
 
 
@@ -180,18 +165,10 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
+* 
 
+## Special Thanks To
+<a href="http://bangkit.academy"><img src="/assets/logo_bangkit.png" width="200px" height="auto"></a>
 
 
 
