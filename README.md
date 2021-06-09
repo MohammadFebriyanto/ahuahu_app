@@ -102,6 +102,9 @@ For Android Development :
 For Machine Learning :
 
 For Cloud Computing :
+* [Python](https://www.python.org/)
+* [Flask](https://flask.palletsprojects.com/)
+* [Docker](https://www.docker.com/)
 
 
 <!-- GETTING STARTED -->
