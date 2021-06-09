@@ -86,7 +86,6 @@
 </p>
 Hello, we would like to introduce Ahuahu. Ahuahu app is an application that can recommend you "is today the best day to do exercise outdoor or not?".  The recommendation will be determine based on air quality index. This apps can help you to make decision for exercise outdoor or indoor. This application can help a people to recommend location that has good quality air for exercise around user area. Good quality air for exercise can improve the quality of exercise.
 
-
 ### Built With
 
 For Android Development :
@@ -99,6 +98,12 @@ For Android Development :
 * [Lottie](https://github.com/airbnb/lottie-android)
 
 For Machine Learning :
+* [Google Colab](https://colab.research.google.com)
+* [Tensorflow](https://www.tensorflow.org)
+* [Numpy](https://numpy.org)
+* [Pandas](https://pandas.pydata.org)
+* [Keras](https://keras.io)
+* [Scikit Learn](https://scikit-learn.org)
 
 For Cloud Computing :
 * [Python](https://www.python.org/)
@@ -144,28 +149,34 @@ Contributions are what make the open source community such an amazing place to b
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the Bangkit Academy License. See `LICENSE` for more information.
 
 
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+* Afif Tri Farhan - [LinkedIn: ](https://www.linkedin.com) - c0020139@bangkit.academy
+* Aprilia Susanti - [LinkedIn: Aprilia Susanti](https://www.linkedin.com/in/aprilia-susanti-3bb0841a9) - m0040191@bangkit.academy
+* Dwiky Aprian Ashari - [LinkedIn: Dwiki Aprian Ashari](https://www.linkedin.com/in/dwiky-aprian-ashari-697082148/) - a2582404@bangkit.academy
+* Mohammad Febriyanto - [LinkedIn: ](https://www.linkedin.com) - c0020135@bangkit.academy
+* Rainal Yusril Bahrunnafar - [LinkedIn: ](https://www.linkedin.com) - m0040195@bangkit.academy
+* Ridha Rizkia Putri - [LinkedIn: ](https://www.linkedin.com) - a2582408@bangkit.academy
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/MohammadFebriyanto/ahuahu_app](https://github.com/MohammadFebriyanto/ahuahu_app)
 
 
 
 <!-- ACKNOWLEDGEMENTS -->
+<!--
 ## Acknowledgements
+
 * Potential datasets : https://data.jakarta.go.id/dataset/indeks-standar-pencemaran-udara-ispu-tahun-2020/resource/0f168955-5771-43a2-9fed-9c74ac3c268e
 * Potential API: https://aqicn.org
 * Academic paper / journal from explorations :
 1. ML for Classification (https://datajobs.com/data-science-repo/Supervised-Learning-[SB-Kotsiantis].pdf; https://www.researchgate.net/publication/319370844_Classification_Techniques_in_Machine_Learning_Applications_and_Issues; https://www.researchgate.net/profile/J-E-T-Akinsola/publication/318338750_Supervised_Machine_Learning_Algorithms_Classification_and_Comparison/links/596474ae0f7e9b819497e053/Supervised-Machine-Learning-Algorithms-Classification-and-Comparison.pdf )
 2. Parameter Optimization (https://arxiv.org/abs/2007.15745)
 3. Human Health Effect of Air Pollution (https://www.sciencedirect.com/science/article/pii/S1877042814054986; https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8746201)
-
 
 ## Special Thanks To
 <a href="http://bangkit.academy"><img src="/assets/logo_bangkit.png" width="200px" height="auto"></a>
