@@ -168,7 +168,6 @@ Project Link: [https://github.com/MohammadFebriyanto/ahuahu_app](https://github.
 
 
 <!-- ACKNOWLEDGEMENTS -->
-<!--
 ## Acknowledgements
 
 * Potential datasets : https://data.jakarta.go.id/dataset/indeks-standar-pencemaran-udara-ispu-tahun-2020/resource/0f168955-5771-43a2-9fed-9c74ac3c268e
