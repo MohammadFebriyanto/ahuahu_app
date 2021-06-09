@@ -66,7 +66,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -85,8 +84,7 @@
 <img src="/assets/screenshot_3.jpg" width="175px" height="auto"></img>
 <img src="/assets/screenshot_4.jpg" width="175px" height="auto"></img>
 </p>
-
-Ahuahu App is an application that can recommend to you ‘is today the best day to do some exercise outdoors or not?’. The recommendation will be determined based on the air quality index. The problems are many people want to exercise at locations that have good air quality and fresh air, air quality in a location does not always support people to exercise outdoors, and air quality has a big impact on the people who want to exercise outdoors. Nowadays, people have to check the air quality index manually or even don't check the air quality index when they want to do exercise outdoors. Since COVID-19 pandemic, in Jakarta, the number of people cycling has increased 10 times. People like to exercise outdoors such as cycling, running, and walking around. To make people comfortable to exercise and breathe fresh air, we are offering an **Ahuahu App**. Ahuahu app is an application for location recommendation for exercising. This application can help people to recommend locations that have good quality air for exercise around the user area.  Good quality air for exercise can improve the quality of exercise. Our target users are people who have hobbies to do outdoor activities/outdoor exercise such as running, cycling, and other outdoor activities.
+Hello, we would like to introduce Ahuahu. Ahuahu app is an application that can recommend you "is today the best day to do exercise outdoor or not?".  The recommendation will be determine based on air quality index. This apps can help you to make decision for exercise outdoor or indoor. This application can help a people to recommend location that has good quality air for exercise around user area. Good quality air for exercise can improve the quality of exercise.
 
 ### Built With
 
@@ -108,6 +106,9 @@ For Machine Learning :
 * [Scikit Learn](https://scikit-learn.org)
 
 For Cloud Computing :
+* [Python](https://www.python.org/)
+* [Flask](https://flask.palletsprojects.com/)
+* [Docker](https://www.docker.com/)
 
 
 <!-- GETTING STARTED -->
@@ -115,7 +116,8 @@ For Cloud Computing :
 
 ### Prerequisites
 
-This app only can run on Android smartphone (Stable for Android 7+)
+* Stable for Android 7+
+* Internet Connection
 
 ### Installation
 
@@ -125,17 +127,10 @@ This app only can run on Android smartphone (Stable for Android 7+)
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/MohammadFebriyanto/ahuahu_app/issues) for a list of proposed features (and known issues).
-
+How to use Ahuahu App :
+* Open Ahuahu App
+* Click Get Location button in home page
+* The result recommendation will be show
 
 
 <!-- CONTRIBUTING -->
@@ -144,9 +139,9 @@ See the [open issues](https://github.com/MohammadFebriyanto/ahuahu_app/issues) f
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch 
+3. Commit your Changes 
+4. Push to the Branch 
 5. Open a Pull Request
 
 
@@ -175,18 +170,13 @@ Project Link: [https://github.com/MohammadFebriyanto/ahuahu_app](https://github.
 <!-- ACKNOWLEDGEMENTS -->
 <!--
 ## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
--->
+
+* Potential datasets : https://data.jakarta.go.id/dataset/indeks-standar-pencemaran-udara-ispu-tahun-2020/resource/0f168955-5771-43a2-9fed-9c74ac3c268e
+* Potential API: https://aqicn.org
+* Academic paper / journal from explorations :
+1. ML for Classification (https://datajobs.com/data-science-repo/Supervised-Learning-[SB-Kotsiantis].pdf; https://www.researchgate.net/publication/319370844_Classification_Techniques_in_Machine_Learning_Applications_and_Issues; https://www.researchgate.net/profile/J-E-T-Akinsola/publication/318338750_Supervised_Machine_Learning_Algorithms_Classification_and_Comparison/links/596474ae0f7e9b819497e053/Supervised-Machine-Learning-Algorithms-Classification-and-Comparison.pdf )
+2. Parameter Optimization (https://arxiv.org/abs/2007.15745)
+3. Human Health Effect of Air Pollution (https://www.sciencedirect.com/science/article/pii/S1877042814054986; https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8746201)
 
 ## Special Thanks To
 <a href="http://bangkit.academy"><img src="/assets/logo_bangkit.png" width="200px" height="auto"></a>

@@ -1,0 +1,13 @@
+This dataset contains the air quality index in Jakarta during the period 2010-2020 based on five parameter pm10, so2, co, o3, and no2.
+
+The attribute on this dataset are:
+tanggal : Date of air quality measurement
+stasiun : Measurement location at the station
+pm10 : Particulate one of the measured parameters
+so2 : Sulfide (in the form of SO2) one of the measured parameters
+co : Carbon Monoxide is one of the measured parameters
+o3 : Ozone one of the measured parameters
+no2 : Nitrogen dioxide is one of the measured parameters
+max : The highest measurement value of all parameters measured at the same time
+critical : Parameter with the highest measurement result hasil
+categori : Category of air pollution standard index calculation result

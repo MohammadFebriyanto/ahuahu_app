@@ -1,0 +1,92 @@
+Index: app/src/main/java/com/cap0097/ahuahuapp/ui/result/ResultActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.cap0097.ahuahuapp.ui.result\n\nimport android.annotation.SuppressLint\nimport android.location.LocationManager\nimport android.os.Build\nimport androidx.appcompat.app.AppCompatActivity\nimport android.os.Bundle\nimport android.view.View\nimport androidx.activity.viewModels\nimport androidx.fragment.app.viewModels\nimport com.bumptech.glide.Glide\nimport com.cap0097.ahuahuapp.R\nimport com.cap0097.ahuahuapp.data.local.HistoryEntity\nimport com.cap0097.ahuahuapp.databinding.ActivityResultBinding\nimport com.cap0097.ahuahuapp.databinding.ResultBinding\nimport com.cap0097.ahuahuapp.domain.model.Result\nimport com.cap0097.ahuahuapp.ui.home.HomeViewModel\nimport dagger.hilt.android.AndroidEntryPoint\nimport java.text.SimpleDateFormat\nimport java.time.LocalDateTime\nimport java.time.format.DateTimeFormatter\nimport java.util.*\n\n@AndroidEntryPoint\nclass ResultActivity : AppCompatActivity() {\n\n    private lateinit var binding : ActivityResultBinding\n    private lateinit var currentTime: String\n    private val viewModel: ResultViewModel by viewModels()\n\n    companion object{\n        const val EXTRA_LONG = \"extra_long\"\n        const val EXTRA_LAT = \"extra_lat\"\n    }\n\n    override fun onCreate(savedInstanceState: Bundle?) {\n        super.onCreate(savedInstanceState)\n        binding = ActivityResultBinding.inflate(layoutInflater)\n        setContentView(binding.root)\n        loadingShow(true)\n        resultShow(false)\n        binding.include.toolbar.apply {\n            setNavigationIcon(R.drawable.ic_baseline_arrow_back_ios_24)\n            setNavigationOnClickListener {\n                finish()\n            }\n        }\n        val lat = intent.getStringExtra(EXTRA_LAT)\n        val long = intent.getStringExtra(EXTRA_LONG)\n        viewModel.setResult(lat!!,long!!)\n        viewModel.getResult().observe(this, {\n            binding.apply {\n                loadingShow(false)\n                resultShow(true, it)\n            }\n        })\n    }\n\n    @SuppressLint(\"SimpleDateFormat\", \"SetTextI18n\")\n    private fun resultShow(state: Boolean, result: Result? = null) {\n        if (state) {\n            if (result != null) {\n                binding.layoutResult.apply {\n                    tvLabelRecomendation.text = result.rekomendasi\n                    tvAddress.text = result.label\n                    tvLabelAir.text = \"AIR QUALITY: ${result.kualitasUdara}\"\n                    tvDesc.text = result.desc.replaceFirstChar {\n                        if (it.isLowerCase()) it.titlecase(\n                            Locale.getDefault()\n                        ) else it.toString()\n                    }\n                    Glide.with(this@ResultActivity)\n                        .load(result.link)\n                        .placeholder(R.drawable.logo_placeholder)\n                        .into(imgSmile)\n                }\n                currentTime = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {\n                    val current = LocalDateTime.now()\n                    val formatter = DateTimeFormatter.ofPattern(\"dd-MM-yyyy | HH:mm:ss.SSS\")\n                    val formatted = current.format(formatter)\n                    formatted.toString()\n                } else {\n                    val sdf = SimpleDateFormat(\"dd-M-yyyy | hh:mm:ss\")\n                    val currentDate = sdf.format(Date())\n                    currentDate.toString()\n                }\n                val history = HistoryEntity(\n                    null,\n                    result.label.toString(),\n                    result.kualitasUdara,\n                    result.kualitasUdara,\n                    currentTime,\n                )\n                viewModel.addHistory(history)\n            }\n            binding.layoutResult.root.visibility = View.VISIBLE\n        } else {\n            binding.layoutResult.root.visibility = View.GONE\n        }\n    }\n\n    private fun loadingShow(state: Boolean) {\n        if (state) {\n            binding.layoutLoading.root.visibility = View.VISIBLE\n        } else {\n            binding.layoutLoading.root.visibility = View.GONE\n        }\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/cap0097/ahuahuapp/ui/result/ResultActivity.kt	(revision ece3b7088931edc50b2070af99355abb4303db6a)
++++ app/src/main/java/com/cap0097/ahuahuapp/ui/result/ResultActivity.kt	(date 1623171071114)
+@@ -1,20 +1,16 @@
+ package com.cap0097.ahuahuapp.ui.result
+ 
+ import android.annotation.SuppressLint
+-import android.location.LocationManager
+ import android.os.Build
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
+ import android.view.View
+ import androidx.activity.viewModels
+-import androidx.fragment.app.viewModels
+ import com.bumptech.glide.Glide
+ import com.cap0097.ahuahuapp.R
+ import com.cap0097.ahuahuapp.data.local.HistoryEntity
+ import com.cap0097.ahuahuapp.databinding.ActivityResultBinding
+-import com.cap0097.ahuahuapp.databinding.ResultBinding
+ import com.cap0097.ahuahuapp.domain.model.Result
+-import com.cap0097.ahuahuapp.ui.home.HomeViewModel
+ import dagger.hilt.android.AndroidEntryPoint
+ import java.text.SimpleDateFormat
+ import java.time.LocalDateTime
+Index: app/src/main/res/layout/activity_result.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    android:orientation=\"vertical\"\n    tools:context=\".ui.result.ResultActivity\">\n\n    <include\n        android:id=\"@+id/include\"\n        layout=\"@layout/custom_toolbar\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\" />\n\n    <ScrollView\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"match_parent\">\n\n        <androidx.constraintlayout.widget.ConstraintLayout\n            android:layout_width=\"match_parent\"\n            android:layout_height=\"match_parent\">\n\n            <include\n                android:id=\"@+id/layout_loading\"\n                layout=\"@layout/loading\"\n                android:layout_width=\"0dp\"\n                android:layout_height=\"wrap_content\"\n                android:visibility=\"invisible\"\n                app:layout_constraintBottom_toBottomOf=\"parent\"\n                app:layout_constraintEnd_toEndOf=\"parent\"\n                app:layout_constraintStart_toStartOf=\"parent\"\n                app:layout_constraintTop_toTopOf=\"parent\" />\n\n            <include\n                android:id=\"@+id/layout_result\"\n                layout=\"@layout/result\"\n                app:layout_constraintBottom_toBottomOf=\"parent\"\n                app:layout_constraintEnd_toEndOf=\"parent\"\n                app:layout_constraintStart_toStartOf=\"parent\"\n                app:layout_constraintTop_toTopOf=\"parent\" />\n\n        </androidx.constraintlayout.widget.ConstraintLayout>\n    </ScrollView>\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_result.xml	(revision ece3b7088931edc50b2070af99355abb4303db6a)
++++ app/src/main/res/layout/activity_result.xml	(date 1623171442762)
+@@ -19,13 +19,13 @@
+ 
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:layout_width="match_parent"
+-            android:layout_height="match_parent">
++            android:layout_height="wrap_content">
+ 
+             <include
+                 android:id="@+id/layout_loading"
+                 layout="@layout/loading"
+                 android:layout_width="0dp"
+-                android:layout_height="wrap_content"
++                android:layout_height="0dp"
+                 android:visibility="invisible"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent"
+Index: app/src/main/java/com/cap0097/ahuahuapp/ui/home/HomeViewModel.kt
+===================================================================
+--- app/src/main/java/com/cap0097/ahuahuapp/ui/home/HomeViewModel.kt	(revision ece3b7088931edc50b2070af99355abb4303db6a)
++++ app/src/main/java/com/cap0097/ahuahuapp/ui/home/HomeViewModel.kt	(revision ece3b7088931edc50b2070af99355abb4303db6a)
+@@ -1,31 +0,0 @@
+-package com.cap0097.ahuahuapp.ui.home
+-
+-import androidx.lifecycle.LiveData
+-import androidx.lifecycle.MutableLiveData
+-import androidx.lifecycle.ViewModel
+-import androidx.lifecycle.viewModelScope
+-import com.cap0097.ahuahuapp.data.local.HistoryEntity
+-import com.cap0097.ahuahuapp.domain.model.Result
+-import com.cap0097.ahuahuapp.domain.repository.Repository
+-import dagger.hilt.android.lifecycle.HiltViewModel
+-import kotlinx.coroutines.Dispatchers
+-import kotlinx.coroutines.launch
+-import javax.inject.Inject
+-
+-@HiltViewModel
+-class HomeViewModel @Inject constructor(private val repository: Repository)  : ViewModel() {
+-
+-    private lateinit var result: LiveData<Result>
+-
+-    fun setResult(lat : String, long : String){
+-        result = repository.getResult(lat,long)
+-    }
+-
+-    fun getResult() : LiveData<Result> = result
+-
+-    fun addHistory(historyEntity: HistoryEntity){
+-        viewModelScope.launch(Dispatchers.IO) {
+-            repository.addHistory(historyEntity)
+-        }
+-    }
+-}
+\ No newline at end of file
