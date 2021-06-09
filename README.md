@@ -158,7 +158,7 @@ Distributed under the Bangkit Academy License. See `LICENSE` for more informatio
 
 * Afif Tri Farhan - [LinkedIn: ](https://www.linkedin.com) - c0020139@bangkit.academy
 * Aprilia Susanti - [LinkedIn: Aprilia Susanti](https://www.linkedin.com/in/aprilia-susanti-3bb0841a9) - m0040191@bangkit.academy
-* Dwiky Aprian Ashari - [LinkedIn: Dwiki Aprian Ashari](https://www.linkedin.com/in/dwiky-aprian-ashari-697082148/) - a2582404@bangkit.academy
+* Dwiky Aprian Ashari - [LinkedIn: Dwiky Aprian Ashari](https://www.linkedin.com/in/dwiky-aprian-ashari-697082148/) - a2582404@bangkit.academy
 * Mohammad Febriyanto - [LinkedIn: ](https://www.linkedin.com) - c0020135@bangkit.academy
 * Rainal Yusril Bahrunnafar - [LinkedIn: ](https://www.linkedin.com) - m0040195@bangkit.academy
 * Ridha Rizkia Putri - [LinkedIn: ](https://www.linkedin.com) - a2582408@bangkit.academy
