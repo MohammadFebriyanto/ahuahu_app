@@ -118,6 +118,7 @@ For Cloud Computing :
 
 * Stable for Android 7+
 * Internet Connection
+* Location/GPS
 
 ### Installation
 
