@@ -177,6 +177,8 @@ Project Link: [https://github.com/MohammadFebriyanto/ahuahu_app](https://github.
 2. Parameter Optimization (https://arxiv.org/abs/2007.15745)
 3. Human Health Effect of Air Pollution (https://www.sciencedirect.com/science/article/pii/S1877042814054986; https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8746201)
 
+
+
 ## Special Thanks To
 <a href="http://bangkit.academy"><img src="/assets/logo_bangkit.png" width="200px" height="auto"></a>
 
